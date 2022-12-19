@@ -10,6 +10,44 @@
 
 <body>
 
+    <script>
+        let user = {
+            name: "Алиса",
+            married: false,
+            age: 34
+        }
+
+        console.log(user);
+
+        let userJson = JSON.stringify(user);
+        console.log(userJson);
+
+        user = JSON.parse(userJson);
+        console.log(user);
+
+        let userComplex = {
+            name: "Алиса",
+            married: false,
+            age: 34,
+            company: {
+                name: "Opera",
+                country: "Sweden"
+            },
+            favColor: ['blue', 'pink', 'white']
+        }
+
+        console.log(userComplex);
+
+        let userComplexJson = JSON.stringify(userComplex);
+        console.log(userComplexJson);
+
+
+        fetch("https://api.github.com/users/Darina44")
+            .then(response => response.json());
+            .then(user => console.log(user.avatar_url))
+            .catch(error =.console.log(error));
+
+    </script>
 </body>
 
 </html>
