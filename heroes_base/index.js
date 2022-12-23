@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         <div><span class="subtitle">Вселенная: </span>${hero.universe}</div>
         <div><span class="subtitle">Род деятельности: </span>${hero.actions}</div>
         <div><span class="subtitle">Суперспособности: </span>${hero.superpower}</div>
-        <div>${hero.rate}</div>
+        <div><span class="subtitle">Поставьте оценку: </span>${hero.rate}</div>
         </div>`;
     }
     document.querySelector('.heroesContainer').innerHTML = heroesContent;
