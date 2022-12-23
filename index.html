@@ -11,45 +11,53 @@
 <body>
 
     <script>
-        let user = {
-            name: "Алиса",
-            married: false,
-            age: 34
-        }
+        // let user = {
+        //     name: "Алиса",
+        //     married: false,
+        //     age: 34
+        // }
 
-        console.log(user);
+        // console.log(user);
 
-        let userJson = JSON.stringify(user);
-        console.log(userJson);
+        // let userJson = JSON.stringify(user);
+        // console.log(userJson);
 
-        user = JSON.parse(userJson);
-        console.log(user);
+        // user = JSON.parse(userJson);
+        // console.log(user);
 
-        let userComplex = {
-            name: "Алиса",
-            married: false,
-            age: 34,
-            company: {
-                name: "Opera",
-                country: "Sweden"
-            },
-            favColor: ['blue', 'pink', 'white']
-        }
+        // let userComplex = {
+        //     name: "Алиса",
+        //     married: false,
+        //     age: 34,
+        //     company: {
+        //         name: "Opera",
+        //         country: "Sweden"
+        //     },
+        //     favColor: ['blue', 'pink', 'white']
+        // }
 
-        console.log(userComplex);
-        console.log(userComplex);
-
-
-        let userComplexJson = JSON.stringify(userComplex);
-        console.log(userComplexJson);
+        // console.log(userComplex);
+        // console.log(userComplex);
 
 
-        fetch("https://api.github.com/users/Darina44")
-            .then(response => response.json());
-            .then(user => console.log(user.avatar_url))
-            .catch(error =.console.log(error));
+        // let userComplexJson = JSON.stringify(userComplex);
+        // console.log(userComplexJson);
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            fetch("https://api.github.com/users/Darina44")
+                .then(response => response.json())
+                .then(user => {
+                    document.getElementById("avatar")
+                        .src = user.avatar_url;
+                    document.getElementById("userName")
+                        .innerText = user.name;
+                })
+                .catch(error = console.log(error));
+        });
 
     </script>
+    <img src="" id="avatar">
+    <h2 id="userName"></h2>
 </body>
 
 </html>
