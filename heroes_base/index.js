@@ -21,6 +21,8 @@ let json = `[{
     "rate": ""
 }]`;
 
+const btn = document.getElementById('btn');
+
 document.addEventListener("DOMContentLoaded", function (event) {
     let heroes = JSON.parse(json);
 
@@ -32,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         <div><span class="subtitle">Род деятельности: </span>${hero.actions}</div>
         <div><span class="subtitle">Суперспособности: </span>${hero.superpower}</div>
         <div><span class="subtitle">Поставьте оценку: </span>${hero.rate}</div>
+        <div class="rate"><span class="subtitle">Насколько вам нравится герой?</span><select><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
         </div>`;
     }
     document.querySelector('.heroesContainer').innerHTML = heroesContent;
